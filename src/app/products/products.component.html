@@ -1,0 +1,5 @@
+<div  class="card-deck-container">
+    <div *ngFor="let product of list trackBy trackProduct" class="card-item">
+        <app-product-card [item]="product"></app-product-card>
+  </div>
+</div>

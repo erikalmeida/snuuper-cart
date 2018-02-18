@@ -1,0 +1,22 @@
+<mat-tab-group [selectedIndex]="selectedIndex" >
+  <mat-tab label="Electronics">
+    <div class="tab-container">
+      <app-products [list]="electronics" ></app-products>
+    </div>
+    <button mat-raised-button class = "btn-right" color="primary" (click)="selectTab(1)" >Next Category</button>
+  </mat-tab>
+  <mat-tab label="Movies">
+    <div class="tab-container">
+      <app-products [list]="movies" ></app-products>
+    </div>
+    <button mat-raised-button class = "btn-left" color="basic" (click)="selectTab(0)">Previous Category</button>
+    <button mat-raised-button class = "btn-right" color="primary" (click)="selectTab(2)">Next Category</button>
+  </mat-tab>
+  <mat-tab label="VideoGames">
+    <div class="tab-container">
+      <app-products [list]="videogames" ></app-products>
+    </div>
+    <button mat-raised-button class = "btn-left" color="basic" (click)="selectTab(1)">Previous Category</button>
+    <button mat-raised-button class = "btn-right" color="warn" (click)="showTotal()" >SUBMIT</button>
+  </mat-tab>
+</mat-tab-group>

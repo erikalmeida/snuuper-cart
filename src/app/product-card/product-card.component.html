@@ -1,0 +1,19 @@
+
+
+<mat-card class="example-card snuup-card">
+  <mat-card-header >
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{item.url}}" alt="Photo of product">
+  <mat-card-content>
+    <p>
+      {{item.excerpt}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    
+    <button mat-button (click)="openDialog(item)"><i class="material-icons" >shopping_cart</i> Add to Cart</button>
+  </mat-card-actions>
+</mat-card>
+

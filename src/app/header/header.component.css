@@ -1,0 +1,14 @@
+.header{
+    background-color: black;
+    height: 42px;
+    text-decoration-color: white;
+    margin-bottom: 5px;
+}
+.logo{
+    height: 33px;
+    text-align: left;
+    padding: 5px 5px 5px 8px;
+}
+.header-text{
+        color: white;
+}
