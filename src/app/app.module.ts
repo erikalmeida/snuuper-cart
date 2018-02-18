@@ -11,10 +11,9 @@ import {
   MatFormFieldModule
 } from "@angular/material";
 
-
-import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { Globals }  from './models/globalCart'
+import { Globals } from "./models/globalCart";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./in-memory-data.service";
 
@@ -26,8 +25,8 @@ import { ProductTabComponent } from "./product-tab/product-tab.component";
 import { ProductService } from "./service/product.service";
 import { CartService } from "./service/cart.service";
 import { AppRoutingModule } from ".//app-routing.module";
-import { CartItemDialogComponent } from './cart-item-dialog/cart-item-dialog.component';
-import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { CartItemDialogComponent } from "./cart-item-dialog/cart-item-dialog.component";
+import { CartDetailComponent } from "./cart-detail/cart-detail.component";
 
 @NgModule({
   declarations: [
@@ -53,10 +52,12 @@ import { CartDetailComponent } from './cart-detail/cart-detail.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false
+    })
   ],
   entryComponents: [CartItemDialogComponent],
-  providers: [ProductService,Globals,CartService],
+  providers: [ProductService, Globals, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

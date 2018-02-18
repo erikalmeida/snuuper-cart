@@ -9,7 +9,7 @@ import { Item } from "../models/item";
 @Component({
   selector: "app-product-tab",
   templateUrl: "./product-tab.component.html",
-  styleUrls: ["./product-tab.component.css"],
+  styleUrls: ["./product-tab.component.css"]
 })
 export class ProductTabComponent implements OnInit {
   electronics: Product[];
@@ -17,7 +17,7 @@ export class ProductTabComponent implements OnInit {
   videogames: Product[];
   selectedIndex = 0;
   theCart: Item[];
-  name:any;
+  name: any;
   counter = 0;
 
   selectTab(index: number): void {
@@ -25,13 +25,13 @@ export class ProductTabComponent implements OnInit {
   }
 
   constructor(
-    private productService: ProductService, 
+    private productService: ProductService,
     private router: Router,
     private cartService: CartService,
-    private global : Globals) {
-      this.theCart = this.global.cart;
-      
-    }
+    private global: Globals
+  ) {
+    this.theCart = this.global.cart;
+  }
 
   ngOnInit() {
     this.getElectronics();
@@ -40,8 +40,8 @@ export class ProductTabComponent implements OnInit {
   }
   showTotal() {
     this.theCart = this.global.cart;
-    this.cartService.changeMessage(this.theCart)
-    this.router.navigate(['./detail']);
+    this.cartService.changeMessage(this.theCart);
+    this.router.navigate(["./detail"]);
   }
 
   getElectronics(): void {

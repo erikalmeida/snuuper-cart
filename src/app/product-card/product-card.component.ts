@@ -33,40 +33,39 @@ export class ProductCardComponent implements OnInit {
       .subscribe(quantity => {
         if (quantity != undefined) {
           var nQuantity = +quantity;
-          if(this.globals.cart != undefined){
-          var elementPos = this.globals.cart
-            .map(function(x) {
-              return x.id;
-            })
-            .indexOf(product.id);
+          if (this.globals.cart != undefined) {
+            var elementPos = this.globals.cart
+              .map(function(x) {
+                return x.id;
+              })
+              .indexOf(product.id);
 
-          if (elementPos !== -1) {
-            var num = +this.globals.cart[elementPos].quantity;
-            
-            this.globals.cart[elementPos].quantity = (num + nQuantity);
-            console.log(this.globals.cart);
+            if (elementPos !== -1) {
+              var num = +this.globals.cart[elementPos].quantity;
+
+              this.globals.cart[elementPos].quantity = num + nQuantity;
+              console.log(this.globals.cart);
+            } else {
+              this.newItem = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                quantity: nQuantity
+              };
+              this.globals.cart.push(this.newItem);
+              console.log(this.globals.cart);
+            }
           } else {
             this.newItem = {
               id: product.id,
               name: product.name,
               price: product.price,
-              quantity: nQuantity 
+              quantity: nQuantity
             };
             this.globals.cart.push(this.newItem);
             console.log(this.globals.cart);
           }
-        }else{
-          this.newItem = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            quantity: nQuantity
-          };
-          this.globals.cart.push(this.newItem);
-          console.log(this.globals.cart);
         }
-      }
       });
-    
   }
 }

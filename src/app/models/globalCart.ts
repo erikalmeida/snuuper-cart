@@ -4,6 +4,3 @@ import {Item} from '../models/item'
 export class Globals {
  public cart: Item[] = [];
 }
-
-
-
